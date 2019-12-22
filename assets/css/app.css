@@ -1471,7 +1471,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 10px;
   letter-spacing: -0.3px;
-  color: #141414;
+  color: #3274ba;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
@@ -11092,7 +11092,7 @@ div[class^='bg-black'] .owl-carousel .owl-dots .owl-dot:hover:before, div[class^
 .fullscreen-toggle-btn .lines {
   position: relative;
   display: inline-block;
-  background: #000;
+  background: #3274ba;
   width: 22px;
   height: 2px;
   margin: 0;
@@ -11106,7 +11106,7 @@ div[class^='bg-black'] .owl-carousel .owl-dots .owl-dot:hover:before, div[class^
   content: '';
   position: absolute;
   left: 0;
-  background: #000;
+  background: #3274ba;
   width: 22px;
   height: 2px;
   display: inline-block;
