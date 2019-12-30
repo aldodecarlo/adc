@@ -883,9 +883,9 @@ img.img-circle-3xl {
   height: 180px;
 }
 img.img-circle-4xl {
-  min-width: 340px;
-  width: 340px;
-  height: 340px;
+  width: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 ul {
