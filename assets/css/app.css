@@ -837,7 +837,7 @@ img {
   height: auto;
 }
 
-img.img-circle-xs, img.img-circle-sm, img.img-circle-md, img.img-circle-lg, img.img-circle-xl, img.img-circle-2xl, img.img-circle-3xl {
+img.img-circle-xs, img.img-circle-sm, img.img-circle-md, img.img-circle-lg, img.img-circle-xl, img.img-circle-2xl, img.img-circle-3xl, img.img-circle-4xl {
   border-radius: 50%;
 }
 
@@ -881,6 +881,11 @@ img.img-circle-3xl {
   min-width: 180px;
   width: 180px;
   height: 180px;
+}
+img.img-circle-4xl {
+  min-width: 340px;
+  width: 340px;
+  height: 340px;
 }
 
 ul {
