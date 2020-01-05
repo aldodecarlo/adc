@@ -4015,7 +4015,7 @@ div[class^='bg-black'] .text-btn-3:hover:before, div[class*=' bg-black'] .text-b
   display: inline-block;
   border: 1px solid;
   border-radius: 50%;
-  color: #141414;
+  color: #0e4d8f;
   text-align: center;
   -webkit-transition: ease-out 0.2s;
   transition: ease-out 0.2s;
@@ -4191,11 +4191,11 @@ div[class^='bg-black'] .text-btn-3:hover:before, div[class*=' bg-black'] .text-b
 
 .button-circle-outline-dark-2, a.button-circle-outline-dark-2 {
   background: transparent;
-  border-color: #141414;
+  border-color: #0e4d8f;
 }
 
 .button-circle-outline-dark-2:hover, .button-circle-outline-dark-2:focus, a.button-circle-outline-dark-2:hover, a.button-circle-outline-dark-2:focus {
-  background: #141414;
+  background: #0e4d8f;
   border-color: transparent;
   color: #fff;
 }
@@ -11404,7 +11404,7 @@ div[class^='bg-black'].fullscreen-menu, div[class*=' bg-black'].fullscreen-menu,
 }
 
 .bg-dark {
-  background: #141414 !important;
+  background: #3274ba !important;
 }
 
 .font-family-primary {
