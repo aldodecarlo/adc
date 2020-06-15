@@ -20,13 +20,13 @@ body {
 }
 
 a {
-  color: #141414;
+  color: #fff;
   -webkit-transition: linear 0.1s;
   transition: linear 0.1s;
 }
 
 a:hover {
-  color: #646464;
+  color: #f555a0;
   text-decoration: none;
 }
 
@@ -11847,5 +11847,25 @@ p{
   text-align: justify;
   }
 
+  @media (max-width: 576px) {
 
+
+  . {
+  display: none;
+}
+
+
+  
+
+  }
+
+
+  @media (min-width: 576px) {
+
+
+  . {
+  display: none;
+}
+
+  }
 
