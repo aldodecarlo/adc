@@ -46,13 +46,13 @@
 			top: 0;
 			left: -1px;
 			height: 100%;
-			border-left: 1px dashed $color-black-01;
+			border-left: 1px dashed $color-black-015;
 		}
 		&:after {
 			left: 0;
 			bottom: -1px;
 			width: 100%;
-			border-bottom: 1px dashed $color-black-01;
+			border-bottom: 1px dashed $color-black-015;
 		}
 		.testimonial-img {
 			float: left;
@@ -101,7 +101,7 @@
 	//
 	// Borderless //
 	//
-	&.border-0 {
+	&.no-border {
 		margin: -15px;
 		.testimonial-grid-box {
 			padding: 15px;
@@ -109,7 +109,7 @@
 		}
 	}
 	@include breakpoint-less(md) {
-		&.border-0 {
+		&.no-border {
 			margin: -15px 0;
 			.testimonial-grid-box { padding: 15px 0; }
 		}

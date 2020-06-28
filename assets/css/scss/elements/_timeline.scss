@@ -7,7 +7,7 @@
 		content: '';
 		position: absolute;
 		top: 0;
-		background: $color-black-01;
+		background: $color-black-015;
 		width: 1px;
 		height: 100%;
 	}
@@ -205,7 +205,9 @@
 		.timeline {
 			.timeline-date {
 				h1, h2, h3, h4, h5, h6 {
-					&:before { left: -24px; }
+					&:before {
+						left: -24px;
+					}
 				}
 			}
 		}

@@ -14,12 +14,12 @@ input,
 textarea {
 	background: transparent;
 	width: 100%;
-	border: 1px solid $color-black-01;
+	border: 1px solid $color-black-015;
 	margin-bottom: 1rem;
 	padding: 15px 20px;
 	box-shadow: none;
-	font: 300 16px $font-family-primary;
-	@include transition(ease-out 0.16s);
+	font: 300 16px $font-primary;
+	@include transition(ease-out 0.2s);
 	&:focus, &:active {
 		outline: 0;
 		box-shadow: none;
@@ -48,7 +48,7 @@ input {
 .form-control {
 	background: transparent;
 	height: auto;
-	border: 1px solid $color-black-01;
+	border: 1px solid $color-black-015;
 	border-radius: 0;
 	padding: 15px 20px;
 	&:focus {
@@ -89,10 +89,10 @@ select {
 	height: auto;
 	border-radius: 0;
 	padding: 10px 15px;
-	border-color: $color-black-01;
+	border-color: $color-black-015;
 	color: $color-primary;
 	font-size: 14px;
-	@include transition(ease-out 0.16s);
+	@include transition(ease-out 0.2s);
 	&:focus {
 		border-color: $color-black-02;
 		outline: 0;

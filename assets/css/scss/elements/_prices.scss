@@ -2,14 +2,14 @@
 // Prices Styles //
 //
 .prices-box {
-	border: 1px solid $color-black-01;
+	border: 1px solid $color-black-015;
 	padding: 30px;
 	text-align: center;
 	.price {
 		margin: 20px 0;
 		span {
 			display: block;
-			font: 300 14px $font-family-primary;
+			font: 300 14px $font-primary;
 			color: $color-primary-lighter;
 		}
 		h1, h2, h3, h4, h5, h6 {
@@ -27,7 +27,7 @@
 			}
 			span {
 				display: inline-block;
-				font: 300 14px $font-family-primary;
+				font: 300 14px $font-primary;
 				color: $color-primary-lighter;
 			}
 		}

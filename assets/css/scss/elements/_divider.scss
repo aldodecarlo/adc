@@ -2,7 +2,7 @@
 // Divider Style //
 //
 hr {
-	background: $color-black-01;
+	background: $color-black-015;
 	height: 1px;
 	border: 0;
 	margin-right: 0;
@@ -171,6 +171,11 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 				margin-right: 0;
 			}
 		}
+	}
+}
+div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[class*=' bg-dark'] {
+	.divider-zigzag {
+		span { &:before, &:after { background: $color-white-01; } }
 	}
 }
 

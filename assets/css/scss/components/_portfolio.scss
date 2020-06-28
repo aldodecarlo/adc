@@ -78,38 +78,6 @@
 	&.spacing-50 {
 		.portfolio-item { padding: 25px; }
 	}
-	//
-	// Portfolio box border-radius //
-	//
-	&[class*=' border-radius'], &[class^='border-radius'] {
-		.portfolio-item {
-			.portfolio-box {
-				@include transform(translate3d(0,0,0));
-				overflow: hidden;
-			}
-		}
-	}
-	&.border-radius-025 {
-		.portfolio-item .portfolio-box { border-radius: 0.25em; }
-	}
-	&.border-radius-05 {
-		.portfolio-item .portfolio-box { border-radius: 0.5em; }
-	}
-	&.border-radius-10 {
-		.portfolio-item .portfolio-box { border-radius: 1.0em; }
-	}
-	&.border-radius-15 {
-		.portfolio-item .portfolio-box { border-radius: 1.5em; }
-	}
-	&.border-radius-20 {
-		.portfolio-item .portfolio-box { border-radius: 2.0em; }
-	}
-	&.border-radius-25 {
-		.portfolio-item .portfolio-box { border-radius: 2.5em; }
-	}
-	&.border-radius-30 {
-		.portfolio-item .portfolio-box { border-radius: 3.0em; }
-	}
 }
 .text-center {
 	.portfolio-item { text-align: center; }
@@ -156,7 +124,7 @@
 			border-radius: 30px;
 			margin: 0 5px;
 			padding: 7px 15px;
-			font: 400 13px $font-family-tertiary;
+			font: 400 13px $font-primary;
 			letter-spacing: 1px;
 			text-transform: uppercase;
 			cursor: pointer;
@@ -164,7 +132,7 @@
 			&:hover {
 				background: $button-grey;
 			}
-			&.active, &.mixitup-control-active {
+			&.active {
 				background: $bg-dark;
 				color: $color-white;
 			}
@@ -177,7 +145,17 @@
 		ul {
 			li {
 				font-size: 15px;
-				letter-spacing: -0.2px;
+				letter-spacing: 0;
+				text-transform: none;
+			}
+		}
+	}
+	&.filter-font-3 {
+		ul {
+			li {
+				font-size: 16px;
+				font-weight: 300;
+				letter-spacing: 0;
 				text-transform: none;
 			}
 		}
@@ -187,61 +165,61 @@
 	//
 	&.filter-style-2 {
 		ul {
-			margin: 0 -2px;
+			margin: 0 -14px -16px;
 			li {
 				background: transparent;
-				margin: 0 2px;
-				color: $color-primary;
-				&:hover, &.active, &.mixitup-control-active {
+				margin: 0 14px 16px;
+				padding: 0;
+				color: $color-primary-lighter;
+				&:hover, &.active {
+					background: transparent;
 					color: $color-dark;
-				}
-				&.active, &.mixitup-control-active {
-					background: $button-grey-lighter;
 				}
 			}
 		}
 	}
 	&.filter-style-3 {
 		ul {
-			margin: 0 -14px -8px;
+			margin: 0 -2px;
 			li {
-				position: relative;
 				background: transparent;
-				margin: 0 14px 8px;
-				padding: 0;
-				color: $color-primary;
-				&:after {
-					content: '';
-					position: absolute;
-					bottom: -1px;
-					left: 0;
-					background: $bg-dark;
-					width: 0;
-					height: 1px;
-					@include transition(ease-out 0.16s);
-				}
-				&:hover, &.active, &.mixitup-control-active {
+				margin: 0 2px;
+				color: $color-primary-lighter;
+				&:hover, &.active {
 					color: $color-dark;
 				}
-				&.active, &.mixitup-control-active {
-					&:after {
-						width: 100%;
-					}
+				&.active {
+					background: $button-grey-lighter;
 				}
 			}
 		}
 	}
 	&.filter-style-4 {
 		ul {
-			margin: 0 -14px -7px;
+			margin: 0 -14px -16px;
 			li {
+				position: relative;
 				background: transparent;
-				margin: 0 14px 7px;
+				margin: 0 14px 16px;
 				padding: 0;
 				color: $color-primary-lighter;
-				&:hover, &.active, &.mixitup-control-active {
-					background: transparent;
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: -6px;
+					left: 0;
+					background: $bg-dark;
+					width: 0;
+					height: 1px;
+					@include transition(ease-out 0.2s);
+				}
+				&:hover, &.active {
 					color: $color-dark;
+				}
+				&.active {
+					&:after {
+						width: 100%;
+					}
 				}
 			}
 		}
@@ -257,7 +235,7 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 					background: transparent;
 					color: $color-white;
 				}
-				&.active, &.mixitup-control-active {
+				&.active {
 					background: $color-white;
 					color: $color-dark;
 				}
@@ -266,13 +244,11 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 		&.filter-style-2 {
 			ul {
 				li {
+					background: transparent;
 					color: $color-white-07;
-					&:hover, &.active, &.mixitup-control-active {
+					&:hover, &.active {
+						background: transparent;
 						color: $color-white;
-					}
-					&.active, &.mixitup-control-active {
-						background: $color-white;
-						color: $color-dark;
 					}
 				}
 			}
@@ -281,14 +257,12 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 			ul {
 				li {
 					color: $color-white-07;
-					&:after {
-						background: $color-white;
-					}
-					&:hover, &.active, &.mixitup-control-active {
+					&:hover, &.active {
 						color: $color-white;
 					}
-					&.active, &.mixitup-control-active {
-						background: transparent;
+					&.active {
+						background: $color-white;
+						color: $color-dark;
 					}
 				}
 			}
@@ -296,11 +270,15 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 		&.filter-style-4 {
 			ul {
 				li {
-					background: transparent;
 					color: $color-white-07;
-					&:hover, &.active, &.mixitup-control-active {
-						background: transparent;
+					&:after {
+						background: $color-white;
+					}
+					&:hover, &.active {
 						color: $color-white;
+					}
+					&.active {
+						background: transparent;
 					}
 				}
 			}
@@ -320,7 +298,7 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 			img {
 				@include transform(scale(1));
 				width: 100%;
-				@include transition(ease-out 0.18s);
+				@include transition(ease-out 0.2s);
 			}
 		}
 		a {
@@ -337,11 +315,11 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 			top: 0;
 			left: 0;
 			opacity: 0;
-			background: $color-black-04;
+			background: $color-black-06;
 			width: 100%;
 			height: 100%;
 			color: $color-white-07;
-			@include transition(ease-out 0.16s);
+			@include transition(ease-out 0.2s);
 			div {
 				position: absolute;
 				left: 30px;
@@ -349,12 +327,12 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 				* {
 					opacity: 0;
 					@include transform(translateY(5px));
-					margin-bottom: 7px;
-					@include transition(ease-out 0.16s);
-					&:first-child { @include transition-delay(0.06s); }
-					&:last-child { @include transition-delay(0.12s); margin-bottom: 0; }
+					margin-bottom: 5px;
+					@include transition(ease-out 0.2s);
+					&:first-child { @include transition-delay(0.1s); }
+					&:last-child { @include transition-delay(0.2s); }
 				}
-				h1,h2,h3,h4,h5,h6 {
+				h1, h2, h3, h4, h5, h6 {
 					color: $color-white;
 				}
 				span {
@@ -386,6 +364,61 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 .hover-style-2 {
 	.portfolio-item {
 		.portfolio-box {
+			.portfolio-img {
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1;
+					opacity: 0;
+					background: $color-white-01;
+					width: 100%;
+					height: 100%;
+					@include transition(ease-out 0.2s);
+				}
+			}
+			.portfolio-title {
+				position: static;
+				opacity: 1;
+				background: $color-white;
+				padding: 20px;
+				color: $color-dark;
+				div {
+					position: static;
+					left: 0;
+					bottom: 0;
+					* {
+						opacity: 1;
+						@include transform(translateY(0));
+						color: $color-primary;
+					}
+					h1, h2, h3, h4, h5, h6 {
+						color: $color-dark;
+					}
+				}
+			}
+			&:hover {
+				.portfolio-img {
+					img {
+						@include transform(scale(1.02));
+						@include filter(blur(0));
+					}
+					&:before {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
+
+//
+// Hover Style 3 //
+//
+.hover-style-3 {
+	.portfolio-item {
+		.portfolio-box {
 			.portfolio-title {
 				opacity: 1;
 				background: $color-black-01;
@@ -395,7 +428,7 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 					* {
 						opacity: 1;
 						@include transform(translateY(0));
-						@include transition(ease-out 0.16s);
+						@include transition(ease-out 0.2s);
 					}
 				}
 				i {
@@ -405,7 +438,7 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 					@include transform(translateY(5px));
 					opacity: 0;
 					color: $color-white;
-					@include transition(ease-out 0.16s);
+					@include transition(ease-out 0.2s);
 				}
 			}
 			&:hover {
@@ -422,9 +455,9 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 }
 
 //
-// Hover Style 3 //
+// Hover Style 4 //
 //
-.hover-style-3 {
+.hover-style-4 {
 	.portfolio-item {
 		.portfolio-box {
 			overflow: hidden;
@@ -438,7 +471,7 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 				background: $bg-dark;
 				height: auto;
 				padding: 15px 30px;
-				@include transition(ease-out 0.16s);
+				@include transition(ease-out 0.2s);
 				div {
 					position: static;
 					opacity: 1;
@@ -472,9 +505,9 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 }
 
 //
-// Hover Style 4 //
+// Hover Style 5 //
 //
-.hover-style-4 {
+.hover-style-5 {
 	.portfolio-item {
 		.portfolio-box {
 			overflow: hidden;
@@ -488,8 +521,9 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 					right: 20px;
 					bottom: 20px;
 					left: 20px;
+					@include transform(translateY(5px));
 					background: $color-white;
-					@include transition(ease-out 0.16s);
+					@include transition(ease-out 0.2s);
 				}
 				div {
 					top: 50%;
@@ -501,8 +535,8 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 					width: 100%;
 					padding: 0 50px;
 					text-align: center;
-					@include transition(ease-out 0.16s);
-					h1,h2,h3,h4,h5,h6 {
+					@include transition(ease-out 0.2s);
+					h1, h2, h3, h4, h5, h6 {
 						color: $color-dark;
 					}
 					span {
@@ -518,6 +552,9 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 					}
 				}
 				.portfolio-title {
+					&:after {
+						@include transform(translateY(0));
+					}
 					div {
 						opacity: 1;
 					}
@@ -528,29 +565,55 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 }
 
 //
-// Hover Style 5 //
+// Hover Style 6 //
 //
-.hover-style-5 {
+.hover-style-6 {
 	.portfolio-item {
 		.portfolio-box {
+			&:hover {
+				.portfolio-img {
+					img {
+						@include transform(scale(1));
+						@include filter(blur(0));
+					}
+				}
+			}
+		}
+	}
+}
+
+//
+// Hover Style 7 //
+//
+.hover-style-7 {
+	.portfolio-item {
+		.portfolio-box {
+			.portfolio-img {
+				img {
+					@include transition(ease-out 0.3s);
+				}
+			}
 			.portfolio-title {
-				background: $color-white-09;
-				color: $color-primary;
+				@include transition(ease-out 0.3s);
 				div {
 					top: 50%;
 					left: 50%;
 					bottom: auto;
-					@include transform(translate(-50%,-50%));
+					@include transform(translate(-50%,-50%) scale(0.96));
 					text-align: center;
-					h1,h2,h3,h4,h5,h6 {
-						color: $color-dark;
+					@include transition(ease-out 0.3s);
+					* {
+						@include transform(translateY(0));
+						margin-bottom: 0;
+						&:first-child { @include transition-delay(0s); }
+						&:last-child { @include transition-delay(0s); }
 					}
 				}
 			}
 			&:hover {
 				.portfolio-title {
 					div	{
-						@include transform(translate(-50%,-50%));
+						@include transform(translate(-50%,-50%) scale(1));
 					}
 				}
 			}
