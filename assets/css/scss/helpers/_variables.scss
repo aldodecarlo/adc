@@ -1,11 +1,9 @@
 //
 // Font //
 //
-$font-primary: 'Open Sans', sans-serif;
-$font-playfair: 'Playfair Display', serif;
-$font-poppins: 'Poppins', sans-serif;
-$font-secondary: $font-playfair;
-$font-tertiary: $font-poppins;
+$font-family-primary: 'Open Sans', sans-serif;
+$font-family-secondary: 'Playfair Display', serif;
+$font-family-tertiary: 'Poppins', sans-serif;
 $font-weight-black: 900;
 $font-weight-extra-bold: 800;
 $font-weight-bold: 700;
@@ -39,9 +37,10 @@ $color-white-05: rgba(255, 255, 255, 0.5);
 $color-white-04: rgba(255, 255, 255, 0.4);
 $color-white-03: rgba(255, 255, 255, 0.3);
 $color-white-02: rgba(255, 255, 255, 0.2);
+$color-white-015: rgba(255, 255, 255, 0.15);
 $color-white-01: rgba(255, 255, 255, 0.1);
-$color-primary: #646464;
-$color-primary-lighter: #a0a0a0;
+$color-primary: #7C7C7C;
+$color-primary-lighter: #AAAAAA;
 $color-green: #24963e;
 $color-green-lighter: #28a745;
 $color-red: #c62f3e;
@@ -50,47 +49,47 @@ $color-warning: #e5ad06;
 $color-warning-lighter: #ffc107;
 $color-info: #1491a5;
 $color-info-lighter: #17a2b8;
-$color-dark: #141414;
-$color-dark-lighter: #1b1b1b;
+$color-dark: #131415;
+$color-dark-lighter: #1a1b1c;
 $color-blue: #007bff;
 
 //
 // Background colors //
 //
-$bg-dark: #141414;
-$bg-dark-lighter: #1b1b1b;
-$bg-dark-lightest: #222222;
-$bg-dark-grey: rgb(50, 50, 50);
-$bg-dark-grey-09: rgba(50, 50, 50, 0.9);
-$bg-dark-grey-09: rgba(50, 50, 50, 0.9);
-$bg-dark-grey-08: rgba(50, 50, 50, 0.8);
-$bg-dark-grey-07: rgba(50, 50, 50, 0.7);
-$bg-dark-grey-06: rgba(50, 50, 50, 0.6);
-$bg-dark-grey-05: rgba(50, 50, 50, 0.5);
-$bg-dark-grey-04: rgba(50, 50, 50, 0.4);
-$bg-dark-grey-03: rgba(50, 50, 50, 0.3);
-$bg-dark-grey-02: rgba(50, 50, 50, 0.2);
-$bg-dark-grey-01: rgba(50, 50, 50, 0.1);
-$bg-grey: #f5f5f5;
-$bg-grey-lighter: #f7f7f7;
-$bg-grey-lightest: #f9f9f9;
+$bg-dark: #131415;
+$bg-dark-lighter: #1a1b1c;
+$bg-dark-lightest: #212223;
+$bg-dark-grey: rgb(48, 50, 52);
+$bg-dark-grey-09: rgba(48, 50, 52, 0.9);
+$bg-dark-grey-09: rgba(48, 50, 52, 0.9);
+$bg-dark-grey-08: rgba(48, 50, 52, 0.8);
+$bg-dark-grey-07: rgba(48, 50, 52, 0.7);
+$bg-dark-grey-06: rgba(48, 50, 52, 0.6);
+$bg-dark-grey-05: rgba(48, 50, 52, 0.5);
+$bg-dark-grey-04: rgba(48, 50, 52, 0.4);
+$bg-dark-grey-03: rgba(48, 50, 52, 0.3);
+$bg-dark-grey-02: rgba(48, 50, 52, 0.2);
+$bg-dark-grey-01: rgba(48, 50, 52, 0.1);
+$bg-grey: #f4f5f6;
+$bg-grey-lighter: #f6f7f8;
+$bg-grey-lightest: #f8f9fa;
 
 //
 // Border colors //
 //
 $border-dark: $color-dark;
 $border-dark-lighter: $color-dark-lighter;
-$border-grey: #e6e6e6;
-$border-grey-lighter: #ebebeb;
+$border-grey: #e5e6e7;
+$border-grey-lighter: #eaebec;
 
 //
 // Button colors //
 //
 $button-dark: $color-dark;
-$button-dark-lighter: #1e1e1e;
-$button-grey: #e6e6e6;
-$button-grey-lighter: #f0f0f0;
-$button-grey-darker: #dcdcdc;
-$button-grey-darkest: #d2d2d2;
+$button-dark-lighter: #1d1e1f;
+$button-grey: #e5e6e7;
+$button-grey-lighter: #eff0f1;
+$button-grey-darker: #dcddde;
+$button-grey-darkest: #d2d3d4;
 $button-primary: #006ee5;
 $button-primary-lighter: #007bff;

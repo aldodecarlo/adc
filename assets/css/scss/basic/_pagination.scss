@@ -14,7 +14,7 @@
 			background: transparent;
 			min-width: 31px;
 			height: 31px;
-			border: 1px solid $border-grey;
+			border: 1px solid $color-black-01;
 			border-radius: 20px;
 			padding: 0;
 			color: $color-black-09;
@@ -23,7 +23,7 @@
 			@include transition(linear 0.1s);
 			&:hover {
 				background: transparent;
-				border-color: $color-dark;
+				border-color: $color-black-02;
 			}
 		}
 		&.active {
@@ -83,14 +83,7 @@
 				z-index: 3;
 			}
 		}
-		&.pagination-sm {
-			.page-item {
-				.page-link {
-					border-radius: 0;
-				}
-			}
-		}
-		&.pagination-lg {
+		&.pagination-sm, &.pagination-lg {
 			.page-item {
 				.page-link {
 					border-radius: 0;
@@ -126,7 +119,7 @@ div[class^='bg-black'], div[class*=' bg-black'], div[class^='bg-dark'], div[clas
 				border-color: $color-white-02;
 				color: $color-white;
 				&:hover {
-					border-color: $color-white;
+					border-color: $color-white-04;
 				}
 			}
 			&.active {

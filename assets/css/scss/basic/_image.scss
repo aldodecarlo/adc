@@ -5,13 +5,7 @@ img {
 	width: auto;
 	max-width: 100%;
 	height: auto;
-	&.img-circle-xs,
-	&.img-circle-sm,
-	&.img-circle-md,
-	&.img-circle-lg,
-	&.img-circle-xl, 
-	&.img-circle-2xl, 
-	&.img-circle-3xl {
+	&[class^='img-circle'], &[class*=' img-circle'] {
 		border-radius: 50%;
 	}
 	&.img-circle-xs {

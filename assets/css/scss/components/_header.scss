@@ -1,45 +1,16 @@
 //
-// Header Top bar //
-//
-.header-top {
-	background: $bg-dark;
-	padding: 20px 0;
-	color: $color-white-06;
-	.row {
-		margin-bottom: -20px;
-		div[class^="col-"], div[class*=" col-"] {
-			margin-bottom: 20px;
-		}
-	}
-	a {
-		color: $color-white-07;
-		@include transition(linear 0.1s);
-		&:hover {
-			color: $color-white;
-		}
-	}
-}
-.bg-white, div[class^='bg-grey'], div[class*=' bg-grey'] {
-	.header-top, &.header-top {
-		color: $color-primary;
-		a {
-			color: $color-dark;
-			&:hover {
-				color: $color-primary;
-			}
-		}
-	}
-}
-
-//
 // Header Navbar Styles //
 //
 .navbar {
 	z-index: 995;
 	background: $color-white;
-	height: 90px;
+	height: 80px;
 	padding: 0;
-	@include transition(ease 0.3s);
+	@include transition(ease 0.2s);
+
+	@include breakpoint-less(lg) {
+		height: 70px;
+	}
 
 	.row {
 		width: 100%;
@@ -49,9 +20,6 @@
 			padding: 0;
 		}
 	}
-	h1,h2,h3,h4,h5,h6 {
-		margin: 0;
-	}
 	ul {
 		list-style-type: none;
 		margin: 0;
@@ -59,21 +27,18 @@
 		li {
 			margin: 0;
 		}
-		&.list-horizontal-unstyled {
-			margin: 0 -8px;
-			li {
-				margin: 0 8px;
-			}
-		}
 	}
 	
 	.navbar-brand {
 		margin-right: 2rem;
 		img {
+			width: auto;
+			height: 40px;
 			max-height: 40px;
 		}
 		h1,h2,h3,h4,h5,h6 {
 			display: inline-block;
+			margin: 0;
 		}
 	}
 
@@ -82,71 +47,69 @@
 			.nav-link {
 				position: relative;
 				padding: 0;
-				color: $color-dark;
-				font: 400 13px $font-primary;
+				color: $color-primary;
+				font: 400 13px $font-family-tertiary;
 				letter-spacing: 1px;
 				text-transform: uppercase;
 				@include transition(linear 0.1s);
 				&:hover, &.active {
-					color: $color-primary;
+					color: $color-dark;
 				}
 			}
 			.dropdown-menu {
-				position: absolute;
-				top: 90px;
-				left: 0;
 				background: $color-white;
-				min-width: 220px;
+				width: 220px;
 				border: none;
 				border-radius: 0;
-				padding: 25px 0;
+				padding: 25px 30px;
+				font-size: 14px;
 				h1,h2,h3,h4,h5,h6 {
 					color: $color-dark;
 				}
 				li {
 					position: relative;
-					padding: 5px 30px;
+					padding: 5px 0;
 					a {
 						display: block;
-						font-size: 15px;
 					}
 				}
 				.sub-dropdown {
 					a {
 						position: relative;
 						display: block;
-						padding-right: 13px;
+						padding-right: 14px;
 						&:before, &:after {
 							content: '';
 							position: absolute;
 							top: 50%;
 							@include transform(translateY(-50%));
-							background: $bg-dark;
+							width: 6px;
+							height: 2px;
+							right: 0;
+							background: $color-primary;
 							@include transition(linear 0.1s);
 						}
 						&:before {
-							right: 0px;
-							width: 7px;
-							height: 1px;
+							@include transform(translateY(-50%) rotate3d(0, 0, 1, -45deg));
+							margin-top: 3px;
 						}
 						&:after {
-							right: 3px;
-							width: 1px;
-							height: 7px;
+							@include transform(translateY(-50%) rotate3d(0, 0, 1, 45deg));
+							margin-bottom: 3px;
 						}
 						&:hover {
 							&:before, &:after {
-								background: $color-primary;
+								background: $color-dark;
 							}
 						}
 					}
 					.sub-dropdown-menu {
 						position: absolute;
 						top: -25px;
-						left: 100%;
+						left: 193px;
 						display: none;
 						background: #fff;
-						min-width: 220px;
+						width: 220px;
 						padding: 30px;
 						a {
 							margin-bottom: 10px;
@@ -175,22 +138,22 @@
 						position: absolute;
 						top: 50%;
 						@include transform(translateY(-50%));
-						background: $bg-dark;
+						background: $color-primary;
+						width: 6px;
+						height: 2px;
 						@include transition(linear 0.1s);
 					}
 					&:before {
-						right: 0px;
-						width: 7px;
-						height: 1px;
+						right: 0;
+						@include transform(translateY(-50%) rotate3d(0, 0, 1, -45deg));
 					}
 					&:after {
 						right: 3px;
-						width: 1px;
-						height: 7px;
+						@include transform(translateY(-50%) rotate3d(0, 0, 1, 45deg));
 					}
 					&:hover {
 						&:before, &:after {
-							background: $color-primary;
+							background: $color-dark;
 						}
 					}
 				}
@@ -202,20 +165,7 @@
 		&.nav-font-2 {
 			.nav-item {
 				.nav-link {
-					font-size: 15px;
-					letter-spacing: 0;
-					text-transform: none;
-				}
-			}
-		}
-		//
-		// Nav Font Style 3 //
-		//
-		&.nav-font-3 {
-			.nav-item {
-				.nav-link {
-					font-size: 16px;
-					font-weight: 300;
+					font-size: 14px;
 					letter-spacing: 0;
 					text-transform: none;
 				}
@@ -276,9 +226,9 @@
 					}
 					li {
 						a {
-							color: $color-white-07;
+							color: $color-white-08;
 							&:before, &:after {
-								background: $color-white-07;
+								background: $color-white-08;
 							}
 							&:hover {
 								color: $color-white;
@@ -345,23 +295,26 @@
 		}
 		.nav {
 			.nav-item {
-				margin-right: 30px;
+				margin-right: 24px;
 				&:last-child {
 					margin-right: 0;
 				}
 				.nav-link {
-					line-height: 90px;
+					line-height: 80px;
 				}
 				&.nav-dropdown {
 					.nav-link {
-						padding-right: 13px;
+						padding-right: 14px;
 					}
 					.dropdown-menu {
-						@include transform(translateY(4px));
+						position: absolute;
+						top: 83px;
+						left: 0;
+						@include transform(translateY(5px));
 						display: block;
 						visibility: hidden;
 						opacity: 0;
-						@include box-shadow(0 2px 24px 0 rgba(0,0,0,0.09));
+						@include box-shadow(0 4px 32px -4px rgba(0,0,0,0.12));
 						margin: 0;
 						@include transition(linear 0.1s);
 						li {
@@ -384,15 +337,10 @@
 								display: block;
 								visibility: hidden;
 								opacity: 0;
-								@include box-shadow(0 2px 24px 0 rgba(0,0,0,0.07));
-								@include transition(linear 0.1s);
+								@include box-shadow(0 4px 32px -4px rgba(0,0,0,0.12));
+								@include transition(linear 0.06s);
 							}
 							&:hover {
-								a {
-									&:after {
-										@include transform(translateY(-50%) rotate(-90deg));
-									}
-								}
 								.sub-dropdown-menu {
 									visibility: visible;
 									opacity: 1;
@@ -407,7 +355,7 @@
 							left: auto;
 							.sub-dropdown {
 								.sub-dropdown-menu {
-									left: -100%;
+									left: -253px;
 								}
 							}
 						}
@@ -419,11 +367,6 @@
 						}
 					}
 					&:hover {
-						.nav-link {
-							&:after {
-								@include transform(translateY(-50%) rotate(-90deg));
-							}
-						}
 						.dropdown-menu {
 							@include transform(translateY(0));
 							visibility: visible;
@@ -452,10 +395,10 @@
 			background: $color-white;
 			width: 300px;
 			height: 100%;
-			@include box-shadow(0 0 30px 0 rgba(0,0,0,0.11));
+			@include box-shadow(0 0 30px 0 rgba(0,0,0,0.12));
 			padding: 20px 30px;
 			text-align: left;
-			@include transition(ease-out 0.3s);
+			@include transition(ease-out 0.2s);
 			.nav-item {
 				margin: 0;
 				border-bottom: 1px solid $color-black-015;
@@ -468,8 +411,6 @@
 				}
 				.dropdown-menu {
 					position: relative;
-					top: 0;
-					left: 0;
 					background: transparent;
 					width: 100%;
 					margin: 5px 0 10px;
@@ -479,6 +420,21 @@
 						padding: 5px 20px;
 					}
 					.sub-dropdown {
+						a {
+							&:before, &:after {
+								width: 6px;
+								height: 2px;
+							}
+							&:before {
+								@include transform(translateY(-50%) rotate3d(0, 0, 1, -45deg));
+								margin-top: 0;
+							}
+							&:after {
+								@include transform(translateY(-50%) rotate3d(0, 0, 1, 45deg));
+								margin-bottom: 0;
+								right: 3px;
+							}
+						}
 						.sub-dropdown-menu {
 							position: relative;
 							top: 0;
@@ -495,32 +451,26 @@
 						display: block;
 					}
 				}
-				&.dropdown-minus {
+				&.dropdown-active {
 					.nav-link {
-						color: $color-primary;
+						color: $color-dark;
 						&:before, &:after {
-							background: $color-primary;
-						}
-						&:after {
-							@include transform(translateY(-50%) rotate(-90deg));
+							background: $color-dark;
 						}
 					}
 					.dropdown-menu {
-						.sub-dropdown-minus {
+						.sub-dropdown-active {
 							a {
-								color: $color-primary;
+								color: $color-dark;
 								&:before, &:after {
-									background: $color-primary;
-								}
-								&:after {
-									@include transform(translateY(-50%) rotate(-90deg));
+									background: $color-dark;
 								}
 							}
 							.sub-dropdown-menu {
 								a {
-									color: $color-dark;
+									color: $color-primary;
 									&:hover {
-										color: $color-primary;
+										color: $color-dark;
 									}
 								}
 							}
@@ -543,7 +493,7 @@
 					border-color: $color-white-02;
 				}
 				.nav-link {
-					color: $color-white-07;
+					color: $color-white-08;
 					&:hover, &.active {
 						color: $color-white;
 					}
@@ -551,7 +501,7 @@
 				&.nav-dropdown {
 					.nav-link {
 						&:before, &:after {
-							background: $color-white-07;
+							background: $color-white-08;
 						}
 						&:hover {
 							&:before, &:after {
@@ -560,7 +510,7 @@
 						}
 					}
 				}
-				&.dropdown-minus {
+				&.dropdown-active {
 					.nav-link {
 						color: $color-white;
 						&:before, &:after {
@@ -569,7 +519,7 @@
 					}
 					.dropdown-menu {
 						.sub-dropdown {
-							&.sub-dropdown-minus {
+							&.sub-dropdown-active {
 								a {
 									color: $color-white;
 									&:before, &:after {
@@ -578,7 +528,7 @@
 								}
 								.sub-dropdown-menu {
 									a {
-										color: $color-white-07;
+										color: $color-white-08;
 										&:hover {
 											color: $color-white;
 										}
@@ -619,15 +569,13 @@
 	h1,h2,h3,h4,h5,h6 {
 		color: $color-white;
 	}
-	.list-horizontal, 
-	.list-horizontal-unstyled, 
-	.list-horizontal-dash {
+	ul[class^='list-inline'] {
 		li {
-			color: $color-white-07;
+			color: $color-white-08;
 			a {
 				color: $color-white;
 				&:hover {
-					color: $color-white-07;
+					color: $color-white-08;
 				}
 			}
 		}
@@ -638,7 +586,7 @@
 				.nav-link {
 					color: $color-white;
 					&:hover, &.active {
-						color: $color-white-07;
+						color: $color-white-08;
 					}
 				}
 				&.nav-dropdown {
@@ -648,7 +596,7 @@
 						}
 						&:hover {
 							&:before, &:after {
-								background: $color-white-07;
+								background: $color-white-08;
 							}
 						}
 					}
@@ -685,15 +633,13 @@
 			background: $color-white;
 		}
 	}
-	.list-horizontal, 
-	.list-horizontal-unstyled, 
-	.list-horizontal-dash {
+	ul[class^='list-inline'] {
 		li {
-			color: $color-white-07;
+			color: $color-white-08;
 			a {
 				color: $color-white;
 				&:hover {
-					color: $color-white-07;
+					color: $color-white-08;
 				}
 			}
 		}
@@ -705,7 +651,7 @@
 				.nav-link {
 					color: $color-white;
 					&:hover, &.active {
-						color: $color-white-07;
+						color: $color-white-08;
 					}
 				}
 				&.nav-dropdown {
@@ -715,7 +661,7 @@
 						}
 						&:hover {
 							&:before, &:after {
-								background: $color-white-07;
+								background: $color-white-08;
 							}
 						}
 					}
@@ -731,15 +677,13 @@
 			background: $bg-dark;
 		}
 	}
-	.list-horizontal, 
-	.list-horizontal-unstyled, 
-	.list-horizontal-dash {
+	ul[class^='list-inline'] {
 		li {
 			color: $color-primary;
 			a {
-				color: $color-dark;
+				color: $color-primary;
 				&:hover {
-					color: $color-primary;
+					color: $color-dark;
 				}
 			}
 		}
@@ -752,12 +696,12 @@
 		.nav {
 			.nav-item {
 				.nav-link {
-					color: $color-dark;
+					color: $color-primary;
 					&:before, &:after {
-						background: $bg-dark;
+						background: $color-primary;
 					}
 					&:hover, &.active {
-						color: $color-primary;
+						color: $color-dark;
 					}
 				}
 			}
@@ -773,16 +717,16 @@
 			.nav {
 				.nav-item {
 					.nav-link {
-						color: $color-dark;
+						color: $color-primary;
 						&:before, &:after {
-							background: $bg-dark;
+							background: $color-primary;
 						}
 						&:hover, &.active {
-							color: $color-primary;
+							color: $color-dark;
 						}
 						&:hover {
 							&:before, &:after {
-								background: $color-primary;
+								background: $color-dark;
 							}
 						}
 					}
@@ -792,22 +736,8 @@
 	}
 }
 
-.navbar-shrink {
-	height: 70px;
-	@include box-shadow(0 2px 24px 0 rgba(0,0,0,0.09));
-
-	@include breakpoint-above(lg) {
-		.nav {
-			.nav-item {
-				.nav-link {
-					line-height: 70px;
-				}
-				.dropdown-menu {
-					top: 70px;
-				}
-			}
-		}
-	}
+.navbar-scrolled {
+	@include box-shadow(0 0 30px 0 rgba(0,0,0,0.12));
 
 	&.navbar-absolute {
 		.nav-toggle-btn {
@@ -820,15 +750,13 @@
 				}
 			}
 		}
-		.list-horizontal, 
-		.list-horizontal-unstyled, 
-		.list-horizontal-dash {
+		ul[class^='list-inline'] {
 			li {
 				color: $color-primary;
 				a {
-					color: $color-dark;
+					color: $color-primary;
 					&:hover {
-						color: $color-primary;
+						color: $color-dark;
 					}
 				}
 			}
@@ -845,16 +773,16 @@
 			.nav {
 				.nav-item {
 					.nav-link {
-						color: $color-dark;
+						color: $color-primary;
 						&:before, &:after {
-							background: $bg-dark;
+							background: $color-primary;
 						}
 						&:hover, &.active {
-							color: $color-primary;
+							color: $color-dark;
 						}
 						&:hover {
 							&:before, &:after {
-								background: $color-primary;
+								background: $color-dark;
 							}
 						}
 					}
@@ -877,12 +805,12 @@
 				.nav {
 					.nav-item {
 						.nav-link {
-							color: $color-dark;
+							color: $color-primary;
 							&:before, &:after {
-								background: $bg-dark;
+								background: $color-primary;
 							}
 							&:hover, &.active {
-								color: $color-primary;
+								color: $color-dark;
 							}
 						}
 					}
@@ -896,15 +824,13 @@
 			.navbar-brand, h1,h2,h3,h4,h5,h6 {
 				color: $color-white;
 			}
-			.list-horizontal, 
-			.list-horizontal-unstyled, 
-			.list-horizontal-dash {
+			ul[class^='list-inline'] {
 				li {
-					color: $color-white-07;
+					color: $color-white-08;
 					a {
 						color: $color-white;
 						&:hover {
-							color: $color-white-07;
+							color: $color-white-08;
 						}
 					}
 				}
@@ -928,11 +854,11 @@
 								background: $color-white;
 							}
 							&:hover, &.active {
-								color: $color-white-07;
+								color: $color-white-08;
 							}
 							&:hover {
 								&:before, &:after {
-									background: $color-white-07;
+									background: $color-white-08;
 								}
 							}
 						}
@@ -950,7 +876,10 @@
 	width: 100%;
 }
 .navbar-placeholder-padding {
-	padding-top: 90px;
+	padding-top: 80px;
+	@include breakpoint-less(lg) {
+		padding-top: 70px;
+	}
 }
 .navbar-absolute ~ .navbar-placeholder-padding, 
 .navbar-absolute-dark ~ .navbar-placeholder-padding {
@@ -967,33 +896,33 @@
 				text-align: left;
 				.nav-link {
 					position: relative;
-					padding-right: 13px;
+					padding-right: 14px;
 					&:before, &:after {
 						content: '';
 						position: absolute;
 						top: 50%;
 						@include transform(translateY(-50%));
-						background: $bg-dark;
+						background: $color-primary;
+						width: 6px;
+						height: 2px;
 						@include transition(linear 0.1s);
 					}
 					&:before {
-						right: 0px;
-						width: 7px;
-						height: 1px;
+						right: 0;
+						@include transform(translateY(-50%) rotate3d(0, 0, 1, -45deg));
 					}
 					&:after {
 						right: 3px;
-						width: 1px;
-						height: 7px;
+						@include transform(translateY(-50%) rotate3d(0, 0, 1, 45deg));
 					}
 					&:hover {
 						&:before, &:after {
-							background: $color-primary;
+							background: $color-dark;
 						}
 					}
 				}
 				.mega-menu {
-					font-size: 15px;
+					font-size: 14px;
 					.row {
 						margin: 0 -15px -20px;
 						div[class^="col-"], div[class*=" col-"] {
@@ -1031,14 +960,14 @@
 				@include breakpoint-above(lg) {
 					.mega-menu {
 						position: absolute;
-						top: 90px;
+						top: 83px;
 						right: 30px;
 						left: 30px;
-						@include transform(translateY(4px));
+						@include transform(translateY(5px));
 						visibility: hidden;
 						opacity: 0;
 						background: $color-white;
-						@include box-shadow(0 2px 24px 0 rgba(0,0,0,0.09));
+						@include box-shadow(0 4px 32px -4px rgba(0,0,0,0.12));
 						padding: 30px;
 						@include transition(linear 0.1s);
 					}
@@ -1047,11 +976,6 @@
 							@include transform(translateY(0));
 							visibility: visible;
 							opacity: 1;
-						}
-						.nav-link {
-							&:after {
-								@include transform(translateY(-50%) rotate(-90deg));
-							}
 						}
 					}
 				}
@@ -1065,13 +989,10 @@
 							display: block;
 						}
 					}
-					.nav-link-minus {
+					.nav-link-active {
 						color: $color-primary;
 						&:before, &:after {
 							background: $color-primary;
-						}
-						&:after {
-							@include transform(translateY(-50%) rotate(-90deg));
 						}
 					}
 				}
@@ -1082,12 +1003,12 @@
 			.nav-megadropdown {
 				.mega-menu {
 					border-color: $color-white-02;
-					color: $color-white-06;
+					color: $color-white-07;
 					h1,h2,h3,h4,h5,h6 {
 						color: $color-white;
 					}
 					a {
-						color: $color-white-07;
+						color: $color-white-08;
 						&:hover, &:focus {
 							color: $color-white;
 						}
@@ -1097,9 +1018,9 @@
 			@include breakpoint-less(lg) {
 				.nav-megadropdown {
 					.nav-link {
-						color: $color-white-07;
+						color: $color-white-08;
 						&:before, &:after {
-							background: $color-white-07;
+							background: $color-white-08;
 						}
 						&:hover, &:focus {
 							color: $color-white;
@@ -1107,7 +1028,7 @@
 								background: $color-white;
 							}
 						}
-						&.nav-link-minus {
+						&.nav-link-active {
 							color: $color-white;
 							&:before, &:after {
 								background: $color-white;
@@ -1129,7 +1050,7 @@
 						}
 						&:hover {
 							&:before, &:after {
-								background: $color-white-07;
+								background: $color-white-08;
 							}
 						}
 					}
@@ -1145,22 +1066,22 @@
 						}
 						&:hover {
 							&:before, &:after {
-								background: $color-white-07;
+								background: $color-white-08;
 							}
 						}
 					}
 				}
 			}
-			&.navbar-shrink {
+			&.navbar-scrolled {
 				.nav-item {
 					&.nav-megadropdown {
 						.nav-link {
 							&:before, &:after {
-								background: $color-dark;
+								background: $color-primary;
 							}
 							&:hover {
 								&:before, &:after {
-									background: $color-primary;
+									background: $color-dark;
 								}
 							}
 						}
@@ -1176,7 +1097,7 @@
 								}
 								&:hover {
 									&:before, &:after {
-										background: $color-white-07;
+										opacity: 0.7;
 									}
 								}
 							}
@@ -1190,22 +1111,13 @@
 				&.nav-megadropdown {
 					.nav-link {
 						&:before, &:after {
-							background: $color-dark;
+							background: $color-primary;
 						}
 						&:hover {
 							&:before, &:after {
-								background: $color-primary;
+								background: $color-dark;
 							}
 						}
-					}
-				}
-			}
-		}
-		&.navbar-shrink {
-			.nav-item {
-				&.nav-megadropdown {
-					.mega-menu {
-						top: 70px;
 					}
 				}
 			}
@@ -1236,111 +1148,6 @@
 				.nav-megadropdown {
 					.mega-menu {
 						background: $color-black-09;
-					}
-				}
-			}
-		}
-	}
-}
-
-//
-// Dropdown Icon Arrow //
-//
-.navbar {
-	.nav {
-		&.dropdown-icon-arrow {
-			.nav-item {
-				.dropdown-menu {
-					.sub-dropdown {
-						a {
-							&:before, &:after {
-								width: 5px;
-								height: 1px;
-							}
-							&:before {
-								right: 0;
-								@include transform(translateY(-50%) rotate3d(0, 0, 1, -45deg));
-							}
-							&:after {
-								right: 3px;
-								@include transform(translateY(-50%) rotate3d(0, 0, 1, 45deg));
-							}
-						}
-						@include breakpoint-above(lg) {
-							a {
-								&:before, &:after { right: 0; }
-								&:before { margin-top: 3px; }
-								&:after { margin-bottom: 3px; }
-							}
-						}
-						.sub-dropdown-menu {
-							a {
-								&:before, &:after {
-									background: transparent;
-									width: 0;
-									height: 0;
-								}
-							}
-						}
-					}
-				}
-				&.nav-dropdown {
-					.nav-link {
-						&:before, &:after {
-							width: 5px;
-							height: 1px;
-						}
-						&:before {
-							right: 0;
-							@include transform(translateY(-50%) rotate3d(0, 0, 1, -45deg));
-						}
-						&:after {
-							right: 3px;
-							@include transform(translateY(-50%) rotate3d(0, 0, 1, 45deg));
-						}
-					}
-					&:hover {
-						.nav-link {
-							&:after {
-								@include transform(translateY(-50%) rotate3d(0, 0, 1, 45deg));
-							}
-						}
-					}
-					.dropdown-menu {
-						.sub-dropdown {
-							&:hover {
-								a {
-									&:after {
-										@include transform(translateY(-50%) rotate3d(0, 0, 1, 45deg));
-									}
-								}
-							}
-						}
-					}
-				}
-				&.nav-megadropdown {
-					.nav-link {
-						&:before, &:after {
-							width: 5px;
-							height: 1px;
-						}
-						&:before {
-							right: 0;
-							@include transform(translateY(-50%) rotate3d(0, 0, 1, -45deg));
-						}
-						&:after {
-							right: 3px;
-							@include transform(translateY(-50%) rotate3d(0, 0, 1, 45deg));
-						}
-					}
-					@include breakpoint-above(lg) {
-						&:hover {
-							.nav-link {
-								&:after {
-									@include transform(translateY(-50%) rotate3d(0, 0, 1, 45deg));
-								}
-							}
-						}
 					}
 				}
 			}

@@ -6,7 +6,10 @@ div[class^="hoverbox"] {
 	position: relative;
 	display: inline-block;
 	img {
-		@include transition(ease-out 0.2s);
+		@include transition(ease-out 0.18s);
+	}
+	&[class*=' border-radius'], &[class^='border-radius'] {
+		@include transform(translate3d(0,0,0));
 	}
 }
 
@@ -23,10 +26,10 @@ div[class^="hoverbox"] {
 		z-index: 1;
 		visibility: hidden;
 		opacity: 0;
-		background: $color-black-07;
+		background: $color-black-05;
 		width: 100%;
 		height: 100%;
-		@include transition(ease-out 0.2s);
+		@include transition(ease-out 0.16s);
 	}
 	.hover-content {
 		position: absolute;
@@ -34,7 +37,7 @@ div[class^="hoverbox"] {
 		visibility: hidden;
 		opacity: 0;
 		color: $color-white-07;
-		@include transition(ease-out 0.2s);
+		@include transition(ease-out 0.16s);
 		h1,h2,h3,h4,h5,h6 {
 			color: $color-white;
 		}
@@ -93,33 +96,36 @@ div[class^="hoverbox"] {
 	&:before {
 		content: '';
 		position: absolute;
-		top: 20px;
-		right: 20px;
-		bottom: 20px;
-		left: 20px;
-		@include transform(translateY(5px));
+		top: 16px;
+		right: 16px;
+		bottom: 16px;
+		left: 16px;
+		@include transform(scale(0.99));
 		z-index: 1;
 		visibility: hidden;
 		opacity: 0;
 		background: $color-white;
-		@include transition(ease-out 0.2s);
+		@include transition(ease-out 0.16s);
 	}
 	.hover-content {
 		position: absolute;
 		top: 50%;
-		right: 20px;
-		left: 20px;
+		right: 16px;
+		left: 16px;
 		@include transform(translateY(-50%));
 		z-index: 2;
 		visibility: hidden;
 		opacity: 0;
-		margin-top: 5px;
+		margin-top: 4px;
 		padding: 0 30px;
-		@include transition(ease-out 0.2s);
+		@include transition(ease-out 0.16s);
+		@include breakpoint-less(lg) {
+			padding: 0 20px;
+		}
 	}
 	&:hover, &:focus {
 		&:before {
-			@include transform(translateY(0));
+			@include transform(scale(1));
 			visibility: visible;
 			opacity: 1;
 		}
@@ -140,16 +146,19 @@ div[class^="hoverbox"] {
 .hoverbox-4 {
 	.hover-content {
 		position: absolute;
-		right: 20px;
-		bottom: 20px;
-		left: 20px;
-		@include transform(translateY(5px));
+		right: 16px;
+		bottom: 16px;
+		left: 16px;
+		@include transform(translateY(4px));
 		z-index: 1;
 		visibility: hidden;
 		opacity: 0;
 		background: $color-white;
 		padding: 30px;
-		@include transition(ease-out 0.2s);
+		@include transition(ease-out 0.16s);
+		@include breakpoint-less(lg) {
+			padding: 20px;
+		}
 	}
 	&:hover, &:focus {
 		img {
@@ -173,17 +182,17 @@ div[class^="hoverbox"] {
 		position: absolute;
 		top: 0;
 		left: 0;
-		background: $color-black-06;
+		background: $color-black-04;
 		width: 100%;
 		height: 100%;
-		@include transition(ease-out 0.2s);
+		@include transition(ease-out 0.16s);
 	}
 	.content, 
 	.hover-content {
 		position: absolute;
 		z-index: 1;
 		color: $color-white-07;
-		@include transition(ease-out 0.2s);
+		@include transition(ease-out 0.16s);
 		h1,h2,h3,h4,h5,h6 {
 			color: $color-white;
 		}
@@ -194,7 +203,7 @@ div[class^="hoverbox"] {
 	}
 	&:hover, &:focus {
 		&:after {
-			background: $color-black-07;
+			background: $color-black-05;
 		}
 		img {
 			@include transform(scale(1.02));
@@ -260,10 +269,10 @@ div[class^="hoverbox"] {
 		position: absolute;
 		top: 0;
 		left: 0;
-		background: $color-black-06;
+		background: $color-black-04;
 		width: 100%;
 		height: 100%;
-		@include transition(ease-out 0.2s);
+		@include transition(ease-out 0.16s);
 	}
 	.content, 
 	.hover-content {
@@ -285,11 +294,11 @@ div[class^="hoverbox"] {
 		@include transform(translateY(5px));
 		visibility: hidden;
 		opacity: 0;
-		@include transition(ease-out 0.2s);
+		@include transition(ease-out 0.16s);
 	}
 	&:hover, &:focus {
 		&:after {
-			background: $color-black-07;
+			background: $color-black-05;
 		}
 		img {
 			@include transform(scale(1.02));
@@ -320,7 +329,7 @@ div[class^="hoverbox"] {
 			background: $color-white-01;
 			width: 100%;
 			height: 100%;
-			@include transition(ease-out 0.2s);
+			@include transition(ease-out 0.16s);
 		}
 	}
 	.content {
@@ -328,9 +337,10 @@ div[class^="hoverbox"] {
 		z-index: 2;
 		display: inline-block;
 		background: $color-white;
-		padding: 10px 20px;
+		padding: 10px 16px;
 		color: $color-black-09;
 		h1,h2,h3,h4,h5,h6 {
+			margin: 0;
 			color: $color-black-09;
 		}
 	}
@@ -354,18 +364,16 @@ div[class^="hoverbox"] {
 }
 .hoverbox-9 {
 	.content { 
-		top: 20px;
-		left: 20px;
+		top: 16px;
+		left: 16px;
 	}
 }
 .hoverbox-10 {
 	.content {
-		bottom: 20px;
-		left: 20px;
+		bottom: 16px;
+		left: 16px;
 	}
 }
-
-
 
 .hoverbox-11 {
 	&:before {
@@ -376,10 +384,10 @@ div[class^="hoverbox"] {
 		z-index: 1;
 		visibility: hidden;
 		opacity: 0;
-		background: $color-black-07;
+		background: $color-black-05;
 		width: 100%;
 		height: 100%;
-		@include transition(ease-out 0.2s);
+		@include transition(ease-out 0.16s);
 	}
 	.hover-content {
 		position: absolute;
@@ -401,7 +409,7 @@ div[class^="hoverbox"] {
 			transform: translateY(5px);
 			opacity: 0;
 			padding: 30px;
-			@include transition(ease-out 0.2s);
+			@include transition(ease-out 0.16s);
 		}
 		.bottom {
 			position: absolute;
@@ -412,7 +420,7 @@ div[class^="hoverbox"] {
 			transform: translateY(5px);
 			opacity: 0;
 			padding: 30px;
-			@include transition(ease-out 0.2s);
+			@include transition(ease-out 0.16s);
 		}
 	}
 	&:hover, &:focus {
@@ -431,12 +439,11 @@ div[class^="hoverbox"] {
 				transform: translateY(0);
 				opacity: 1;
 			}
-			.top { @include transition-delay(0.1s); }
-			.bottom { @include transition-delay(0.3s); }
+			.top { @include transition-delay(0.06s); }
+			.bottom { @include transition-delay(0.16s); }
 		}
 	}
 }
-
 
 .hoverbox-1, 
 .hoverbox-2, 
@@ -451,7 +458,7 @@ div[class^="hoverbox"] {
 		}
 	}
 	a {
-		&.text-btn {
+		&.text-button {
 			&:before {
 				background: $color-white-03;
 			}
@@ -462,13 +469,13 @@ div[class^="hoverbox"] {
 				color: $color-white;
 			}
 		}
-		&.text-btn-2 {
+		&.text-button-2 {
 			color: $color-white;
 			&:before, &:after {
 				background: $color-white;
 			}
 		}
-		&.text-btn-3 {
+		&.text-button-3 {
 			&:before {
 				background: $color-white-07;
 			}
