@@ -20,13 +20,13 @@ body {
 }
 
 a {
-  color: #fff;
+  color: #f555a0;
   -webkit-transition: linear 0.1s;
   transition: linear 0.1s;
 }
 
 a:hover {
-  color: #f555a0;
+  color: #fff;
   text-decoration: none;
 }
 
